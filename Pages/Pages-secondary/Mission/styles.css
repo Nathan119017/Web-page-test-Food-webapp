@@ -9,43 +9,89 @@ body {
   }
   
   /* Navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 15px;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  width: 98%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #004D40;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+}
+
+.logo {
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 1.5rem;
+  color: #F4F4F9;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #F4F4F9;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #FF9800;
+}
+
+/* Responsive Navbar */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #F4F4F9;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* Ocultar los enlaces de la navbar en pantallas pequeñas */
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
     width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     background-color: #004D40;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: "Allerta Stencil", sans-serif;
+    padding: 15px;
+    gap: 10px;
+    border-radius: 0 0 8px 8px;
   }
-  
-  
-  .navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+
+  /* Mostrar el menú al hacer clic en el ícono */
+  .navbar-links.show {
     display: flex;
   }
-  
-  .navbar li {
-    margin: 0 15px;
+
+  /* Mostrar el botón del menú en pantallas pequeñas */
+  .menu-toggle {
+    display: block;
   }
-  
-  .navbar a {
-    color: #F4F4F9;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .navbar a:hover {
-    color: #FF9800;
-  }
+}
   
   /* Misión y Visión Section */
   .mission-section {

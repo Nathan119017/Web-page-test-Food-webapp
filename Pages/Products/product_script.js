@@ -27,6 +27,16 @@ let products = JSON.parse(localStorage.getItem('products')) || [
   }
 ];
 
+// JavaScript para mostrar y ocultar el menú en dispositivos móviles
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbarLinks = document.getElementById('navbar-links');
+
+  menuToggle.addEventListener('click', function () {
+    navbarLinks.classList.toggle('show');
+  });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   renderProducts();
   updateCartDisplay();
@@ -130,3 +140,5 @@ document.getElementById('add-product-btn').addEventListener('click', function() 
     alert('Por favor, complete todos los campos correctamente.');
   }
 });
+
+

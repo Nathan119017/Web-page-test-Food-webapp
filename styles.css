@@ -12,38 +12,44 @@ body {
 /* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 15px;
-  width: 100%;
+  width: 98%;
   position: fixed;
   top: 0;
   z-index: 1000;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Añade transición */
-  background-color: transparent; /* Transparente al inicio */
-  font-family: "Allerta Stencil", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-  
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: transparent;
 }
 
 .navbar.scrolled {
-  background-color: #004D40; /* Color de fondo al hacer scroll */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto flotante */
+  background-color: #004D40;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.navbar ul {
-  list-style-type: none;
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+}
+
+.logo {
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 1.5rem;
+  color: #F4F4F9;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
-.navbar li {
-  margin: 0 15px;
-}
-
-/* Links en la Navbar */
 .navbar a {
   color: #F4F4F9;
   text-decoration: none;
@@ -54,6 +60,43 @@ body {
 .navbar a:hover {
   color: #FF9800;
 }
+
+/* Responsive Navbar */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #F4F4F9;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* Ocultar los enlaces de la navbar en pantallas pequeñas */
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #004D40;
+    padding: 15px;
+    gap: 10px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  /* Mostrar el menú al hacer clic en el ícono */
+  .navbar-links.show {
+    display: flex;
+  }
+
+  /* Mostrar el botón del menú en pantallas pequeñas */
+  .menu-toggle {
+    display: block;
+  }
+}
+
 
 
 /* Hero Section with Parallax */

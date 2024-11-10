@@ -1,0 +1,146 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F4F4F9;
+    color: #221D23;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  width: 98%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #004D40;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+}
+
+.logo {
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 1.5rem;
+  color: #F4F4F9;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #F4F4F9;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #FF9800;
+}
+
+/* Responsive Navbar */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #F4F4F9;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* Ocultar los enlaces de la navbar en pantallas pequeñas */
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #004D40;
+    padding: 15px;
+    gap: 10px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  /* Mostrar el menú al hacer clic en el ícono */
+  .navbar-links.show {
+    display: flex;
+  }
+
+  /* Mostrar el botón del menú en pantallas pequeñas */
+  .menu-toggle {
+    display: block;
+  }
+}
+  
+  /* Misión y Visión Section */
+  .mission-section {
+    padding: 50px 60px;
+    text-align: center;
+    max-width: 800px;
+    margin: 120px auto 0;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mission-section h2 {
+    color: #004D40;
+    margin-bottom: 20px;
+  }
+  
+  .mission-section p {
+    color: #221D23;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Contact Section */
+#contact {
+  background-color: #004D40;
+  color: #F4F4F9;
+  padding: 60px;
+  text-align: center;
+}
+
+#contact h2 {
+  color: #FF9800;
+}
+
+#contact p {
+  color: #F4F4F9;
+}
+
+/* Footer */
+footer {
+  background-color: #004D40;
+  color: #F4F4F9;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
